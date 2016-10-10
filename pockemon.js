@@ -13,7 +13,7 @@ class Pokemon {
 	valueOf() {
 		return isNaN(this.level) ? 0 : this.level; // check for valid number value
 	}
-};
+}
 
 class PokemonList extends Array {
 	constructor (...pokemons) {
@@ -36,7 +36,7 @@ class PokemonList extends Array {
 	maxLevel() {
 		return Math.max(...this);
 	}
-};
+}
 
 
 // generate 'lost' list of pokemomns
