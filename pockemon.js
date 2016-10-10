@@ -22,13 +22,13 @@ class PokemonList extends Array {
 	}
 
 	// add Pokekon to the end of list
-	add(pokemon) {
-		this.push(pokemon);
+	add(name, level) {
+		this.push(new Pokemon(name, level));
 	}
 
 	// show pokemoms info and list length
 	show() {
-		this.map(pokemon => pokemon.show() );
+		this.map(pokemon => pokemon.show());
 		console.log(`----------------\nTotal in list: ${this.length}\n`);
 	}
 
@@ -55,12 +55,12 @@ let found = new PokemonList(
 );
 
 // add some pokemons to the 'lost' list
-lost.add(new Pokemon('Mara', 8));
-lost.add(new Pokemon('Loter', 4));
+lost.add('Mara', 8);
+lost.add('Loter', 4);
 
 // add some pokemons to the 'found' list
-found.add(new Pokemon('Zorg', 111));
-found.add(new Pokemon('Mixer', 1));
+found.add('Zorg', 111);
+found.add('Mixer', 1);
 
 console.log('Lost list:');
 lost.show();
@@ -69,7 +69,7 @@ console.log('Found list:');
 found.show();
 
 console.log('Move first pokemon from lost list to found list (use Array methods)\n');
-found.add(lost.shift()); 
+found.push(lost.shift()); 
 
 console.log('Lost list (2):\n');
 lost.show();
