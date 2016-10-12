@@ -17,8 +17,7 @@ class Pokemon {
 
 class PokemonList extends Array {
 	constructor (...pokemons) {
- 		super();
-		pokemons.map(pokemon => this.push(pokemon));
+ 		super(...pokemons);
 	}
 
 	// add Pokekon to the end of list
@@ -28,12 +27,12 @@ class PokemonList extends Array {
 
 	// show pokemoms info and list length
 	show() {
-		this.map(pokemon => pokemon.show());
+		this.forEach(pokemon => pokemon.show())
 		console.log(`----------------\nTotal in list: ${this.length}\n`);
 	}
 
 	// get max level of pokemons
-	maxLevel() {
+	max() {
 		return Math.max(...this);
 	}
 }
@@ -77,6 +76,6 @@ lost.show();
 console.log('Found list (2):\n');
 found.show();
 
-console.log(`Max level for found list: ${found.maxLevel()}`);
+console.log(`Max level for found list: ${found.max()}`);
 
 
