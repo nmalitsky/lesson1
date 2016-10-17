@@ -31,9 +31,11 @@ class PokemonList extends Array {
 		console.log(`----------------\nTotal in list: ${this.length}\n`);
 	}
 
-	// get max level of pokemons
+	// get pockemon with max level in list
 	max() {
-		return Math.max(...this);
+		let maxLevel = Math.max(...this);
+		let pokemonIndex = this.map(pokemon => pokemon.level).indexOf(maxLevel);
+		return this[pokemonIndex];
 	}
 }
 
@@ -76,6 +78,7 @@ lost.show();
 console.log('Found list (2):\n');
 found.show();
 
-console.log(`Max level for found list: ${found.max()}`);
+console.log('Pokemon with max level for found list:');
+found.max().show();
 
 
