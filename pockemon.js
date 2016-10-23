@@ -34,8 +34,7 @@ class PokemonList extends Array {
 	// get pockemon with max level in list
 	max() {
 		let maxLevel = Math.max(...this);
-		let pokemonIndex = this.map(pokemon => pokemon.level).indexOf(maxLevel);
-		return this[pokemonIndex];
+		return this.find(pokemon => pokemon.level == maxLevel);
 	}
 }
 
